@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../atomic/atoms/Heading';
+import Heading from '../../atomic/atoms/Heading';
 
 export default {
     title: 'Atoms/Heading',
@@ -7,6 +7,8 @@ export default {
 }
 
 export const Default = () => <Heading>Heading</Heading>
-export const Primary = () => <Heading color='primary'>Primary</Heading>
+export const ColorPrimary = () => <Heading color='primary'>Primary</Heading>
+export const ColorDefaut = () => <Heading color='default'>Primary</Heading>
+export const Medium = () => <Heading size='md'>Heading</Heading>
 export const Small = () => <Heading size='sm'>Heading</Heading>
 export const ExtraSmall = () => <Heading size='xs'>Heading</Heading>
