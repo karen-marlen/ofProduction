@@ -25,3 +25,7 @@
     background: transparent;
     color: var(--medium-purple);
 }
+
+.type-tertiary {
+    background: var(--color-transparent);
+}

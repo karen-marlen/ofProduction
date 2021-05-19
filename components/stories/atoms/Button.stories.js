@@ -8,3 +8,4 @@ export default {
 
 export const Primary = () => <Button type='primary' >Primary</Button>
 export const Secondary = () => <Button type='secondary' >Secondary</Button>
+export const Tertiary = () => <Button type='tertiary' >Tertiary</Button>
