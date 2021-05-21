@@ -1,14 +1,34 @@
-import React from 'react';
-import Heading from '../../atomic/atoms/Heading';
+import { Heading, styles, options } from '.'
+import {
+  getTemplate,
+  getListTemplate,
+  getOptionsArgTypes,
+} from '../../helpers/storybook'
+
+const Template = getTemplate(Heading, styles)
+const ListTemplate = getListTemplate(Heading, styles)
 
 export default {
-    title: 'Atoms/Heading',
-    component: Heading,
+  title: 'Atoms/Heading',
+  component: Heading,
+  args: {
+    children: 'Consent doubt Tuckborough challenge destroying.',
+  },
+  argTypes: {
+    color: getOptionsArgTypes(options.colors),
+    size: getOptionsArgTypes(options.sizes),
+    weight: getOptionsArgTypes(options.weights),
+    children: { control: 'text' },
+  },
 }
 
-export const Default = () => <Heading>Heading</Heading>
-export const ColorPrimary = () => <Heading color='primary'>Primary</Heading>
-export const ColorDefaut = () => <Heading color='default'>Primary</Heading>
-export const Medium = () => <Heading size='md'>Heading</Heading>
-export const Small = () => <Heading size='sm'>Heading</Heading>
-export const ExtraSmall = () => <Heading size='xs'>Heading</Heading>
+export const Default = Template.bind({})
+
+export const Colors = ListTemplate.bind({})
+Colors.args = { items: options.colors.map((color) => ({ color })) }
+
+export const Sizes = ListTemplate.bind({})
+Sizes.args = { items: options.sizes.map((size) => ({ size })) }
+
+export const Weights = ListTemplate.bind({})
+Weights.args = { items: options.weights.map((weight) => ({ weight })) }

@@ -12,3 +12,4 @@
 - Create Paragraph [atom]
 - Create Button [atom]
 - Create Heading [atom]
+- Create Icon [atom]

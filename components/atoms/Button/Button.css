@@ -1,31 +1,63 @@
 .button {
-    border: 1px solid transparent;
-    border-radius: 30px;
-    box-shadow: 0px 4px 5px var(--white-lilac);
+    display: inline-flex;
+    width: 100%;
+    min-width: max-content;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    border: var(--border-width-thin) solid var(--color-base-transparent);
+    border-radius: var(--button-border-radius-lg);
+    box-shadow: var(--box-shadow-sm);
     cursor: pointer;
-    padding: 10px 85px;
-    transition: all 0.5s ease;
+    transition: filter 0.5s ease, box-shadow 0.2s ease-in;
 }
-
+  
+.button:focus {
+    box-shadow: 0 0 0 1px var(--color-primary), 0 0 10px 0 var(--color-primary);
+    outline: none;
+}
+  
+.button:hover {
+    filter: brightness(1.1);
+}
+  
+.button:active {
+    box-shadow: var(--box-shadow-xs);
+    filter: brightness(0.9);
+}
+  
 .type-primary {
-    background: var(--medium-purple);
-    color: var(--white);
+    background: var(--color-primary);
 }
-
-.type-primary:hover {
-    filter: brightness(1.1)
+  
+.type-primary:focus {
+    box-shadow: 0 0 0 1px var(--color-primary-inverted),
+      0 0 10px 0 var(--color-primary);
 }
-
-.type-primary:active {
-    filter: brightness(0.9)
-}
-
+  
 .type-secondary {
-    border: 1px solid var(--medium-purple);
-    background: transparent;
-    color: var(--medium-purple);
+    border: var(--border-width-thin) solid var(--color-primary);
+    background: var(--color-base-transparent);
 }
-
+  
 .type-tertiary {
-    background: var(--color-transparent);
+    height: 25px;
+    padding: 0;
+    border-bottom: 1px solid var(--color-primary);
+    background: var(--color-base-transparent);
+    border-radius: var(--border-radius-none);
+    box-shadow: var(--shadows-none);
+}
+  
+.type-tertiary:focus {
+    box-shadow: 0 10px 10px -8px var(--color-primary);
+}
+  
+.button.is-inline {
+    max-width: max-content;
+}
+  
+.is-muted {
+    background: var(--color-primary-muted);
 }
